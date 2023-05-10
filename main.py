@@ -1,19 +1,15 @@
 import random
-import game_gui
-def read(file):
-    word_bank = []
-    with open(file,'r') as file:
-        for line in file:
-            word_bank.append(file.readline())
-            word_bank = [i.strip() for i in word_bank]
-
-    return word_bank
-
+from tkinter import *
+from view import *
 def main():
     file = 'words'
-    word_bank = read(file)
-    word = word_bank[random.randint(0,len(word_bank))]
-    game_gui.game(word)
+    window = Tk()
+    window.title('Hangman')
+    window.geometry('700x600')
+    window.resizable(False, False)
+    game = HangMan(window)
+    window.mainloop()
+
 
 if __name__ == '__main__':
     main()
