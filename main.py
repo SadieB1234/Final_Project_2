@@ -1,7 +1,10 @@
 import random
 from tkinter import *
 from view import *
-def main():
+def main() -> None:
+    '''
+    Function to load window and run HangMan class
+    '''
     file = 'words'
     window = Tk()
     window.title('Hangman')
